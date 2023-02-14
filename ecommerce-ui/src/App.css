@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+/* a, p, ul, li {
+  margin: 0;
+  padding: 0;
+} */
+
+ul, li {
+  list-style-type: none;
+  display: grid;
+}
+
+a {
+  border: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+hr {
+  margin: 2rem 1rem;
+  opacity: 50%;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.vacation-container {
+  background-color: coral;
+}
+
+.vacation-container > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.vacation-card {
+  background-color: red;
+  max-width: 20rem;
+  border: 2px solid black;
+  margin: 2rem;
+}
+
+.vacation-image {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.shopping-cart-container {
+  background-color: green;
+}
+
+.shopping-cart-container > ul {
+  display: grid;
+}
+
+.shopping-cart-card {
+  background-color: lawngreen;
+  /* max-width: 20rem; */
+  border: 2px solid black;
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.shopping-cart-image-container {
+  height: 10rem;
+}
+
+.shopping-cart-image-container > :first-child {
+  max-height: 100%;
+}
+
+.shopping-cart-price-container {
+  background-color: antiquewhite;
+}
