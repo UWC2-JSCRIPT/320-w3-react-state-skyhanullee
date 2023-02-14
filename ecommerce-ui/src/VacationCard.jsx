@@ -4,7 +4,9 @@ import React from 'react';
 
 function VacationCard({ rental, addToCart }) {
   // const { image } = rental;
+  // console.log(`vacation card: ${JSON.stringify(rental)}`)
   const { title, houseType, location, payment, rating, host, image } = rental;
+  let nextId = 0;
   return (
     <div className="vacation-card">
       <div className="vacation-image-container">
