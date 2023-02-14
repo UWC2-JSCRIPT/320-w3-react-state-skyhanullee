@@ -1,33 +1,59 @@
 import React from 'react';
-// import VacationDetails from './VacationDetails';
-// import VacationImage from './VacationImage';
+import VacationDetails from './VacationDetails';
+import VacationImage from './VacationImage';
+import { Icon } from '@iconify/react';
+import PropTypes from 'prop-types'
+
 
 function VacationCard({ rental, addToCart }) {
-  // const { image } = rental;
-  // console.log(`vacation card: ${JSON.stringify(rental)}`)
-  const { title, houseType, location, payment, rating, host, image } = rental;
-  let nextId = 0;
   return (
-    <div className="vacation-card">
-      <div className="vacation-image-container">
-        <img src={image} alt={title} className="vacation-image" />
-      </div>
-      <div className="vacation-details-container">
-        <h4 className="vacation-location">{location.city} | {location.country}</h4>
-        <p className="vacation-title">{title}</p>
-        <p className="vacation-house-type">{houseType}</p>
-        <p className="vacation-payment">${payment.cost} | {payment.description}</p>
-        <p className="vacation-rating">{rating.stars} stars | {rating.reviews} reviews</p>
-        <p className="vacation-host">{host.name} | {host.isSuperhost ? 'Superhost' : 'Not Superhost'}</p>
-
-      </div>
-      <div className='vacation-button-container'>
-        <button className="add-button"
+    <div className='vacation-card'>
+      <VacationImage
+      rental={rental}
+      />
+      <VacationDetails
+        rental={rental}
+      />
+      <div className='button-container'>
+        {/* <button className='add-button'
           onClick={() => addToCart(rental)}
-        >ADD</button>
+        >ADD</button> */}
+        <Icon 
+          icon='material-symbols:add-shopping-cart-rounded'
+          className='add-button'
+          onClick={() => addToCart(rental)}
+        />
       </div>
     </div>
   )
+}
+
+VacationCard.propTypes = {
+  rental: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    cartRental: PropTypes.shape({
+      title: PropTypes.string,
+      houseType: PropTypes.string,
+      image: PropTypes.string,
+      location: PropTypes.shape({
+        city: PropTypes.string,
+        country: PropTypes.string
+      }),
+      payment: PropTypes.shape({
+        cost: PropTypes.number,
+        description: PropTypes.string
+      }),
+      host: PropTypes.shape({
+        name: PropTypes.string,
+        isSuperhost: PropTypes.bool
+      }),
+      rating: PropTypes.shape({
+        stars: PropTypes.number,
+        reviews: PropTypes.number
+      })
+    })
+  }),
+  addToCart: PropTypes.func.isRequired
 }
 
 export default VacationCard
