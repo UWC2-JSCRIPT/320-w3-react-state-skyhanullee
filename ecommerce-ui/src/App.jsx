@@ -6,14 +6,39 @@ import { useState } from 'react';
 import ShoppingListItems from './ShoppingListItems';
 
 function App() {
-  const [rentalDetails, setRentalDetails] = useState('');
+  // const [rentalDetails, setRentalDetails] = useState('');
+  // const [rentalTitle, setRentalTitle] = useState('');
+  // const [rentalPrice, setRentalPrice] = useState('');
   const [cartRentals, setCartRentals] = useState([]);
 
-  const addToCart = (rentalTitle, rentalPrice) => {
-    console.log(`added to cart: ${cartRentals}`)
-    setCartRentals([...cartRentals, {title: rentalTitle, price: rentalPrice}]);
-    setRentalDetails(rentalPrice);
+  const addToCart = (rental) => {
+    // const tempRental = {
+    //   title: rental.title,
+    //   price: rental.price
+    // }
+    // const tempRental = {
+    //   cartRental: rental
+    // }
+
+    setCartRentals([...cartRentals, rental]);
+    // setRentalDetails(rentalPrice);
+
+    // console.log(`added to cart: ${JSON.stringify(tempRental)}`)
   }
+
+  const removeFromCart = (cartRental) => {
+    // const tempArray = cartRentals.filter((cartRental) => {
+    //   if (cartRental.title !== rental.title) {
+    //     return cartRentals;
+    //   }
+    // });
+    setCartRentals(
+      cartRentals.filter((rental) =>
+        rental.id !== cartRental.id
+      )
+    );
+  };
+
 
   const rentalList = Bnbs.map((rental, index) => {
     return (
@@ -21,7 +46,7 @@ function App() {
         <VacationCard
           rental={rental}
           addToCart={addToCart}
-          rentalDetails={rentalDetails}
+          // rentalDetails={rentalDetails}
         />
       </li>
     )
@@ -50,10 +75,11 @@ function App() {
       <div className="shopping-cart-container">
         <h1>Shopping Cart</h1>
         <ul>
-          <ShoppingListItems
+          {/* <ShoppingListItems
             rentalList={rentalList}
             addToCart={addToCart}
-          />
+          /> */}
+          {cartRentalList}
         </ul>
       </div>
     </div>

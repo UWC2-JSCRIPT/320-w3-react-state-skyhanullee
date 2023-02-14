@@ -21,7 +21,7 @@ function VacationCard({ rental, addToCart }) {
       </div>
       <div className='vacation-button-container'>
         <button className="add-button"
-          onClick={addToCart}
+          onClick={() => addToCart(rental)}
         >ADD</button>
       </div>
     </div>
