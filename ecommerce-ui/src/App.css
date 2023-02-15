@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 100rem;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* a, p, ul, li {
+  margin: 0;
+  padding: 0;
+} */
+
+ul, li {
+  list-style-type: none;
+  display: grid;
+}
+
+a {
+  border: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+hr {
+  margin: 2rem 1rem;
+  opacity: 50%;
+}
+
+.top-nav {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.vacation-app-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 5rem;
+}
+
+.vacation-rentals-container {
+  padding: 1rem;
+  border: 1px solid rgb(205, 205, 205);
+  border-radius: 15px;
+}
+
+.vacation-rentals-container > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+.vacation-card {
+  max-width: 20rem;
+  margin: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.vacation-image {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+.add-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  padding: 0.5rem;
+  font-size: x-large;
+  color: honeydew;
+  background-color: gray;
+  border-radius: 50%;
+}
+
+.cart-container {
+  height: 50rem;
+  padding: 1rem;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  overflow: auto;
+  border: 1px solid rgb(205, 205, 205);
+  border-radius: 15px ;
+}
+
+.cart-rental-container {
+  overflow-y: scroll;
+  box-sizing: border-box;
+  max-height: 100%;
+
+}
+
+.cart-card {
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  position: relative;
+}
+
+.cart-details-container > .button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-image-container {
+  height: 10rem;
+
+}
+
+.cart-image-container > :first-child {
+  max-height: 100%;
+  border-radius: 15px;
+}
+
+.remove-button {
+  bottom: 0;
+  right: 0;
+  margin-right: 1rem;
+  padding: 0.5rem;
+  font-size: x-large;
+  color: honeydew;
+  background-color: gray;
+  border-radius: 50%;
+}
